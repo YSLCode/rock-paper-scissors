@@ -5,29 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- displays site properly based on user's device -->
-
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
 
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-    
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
 
   <div class="title">
-    <div class="logo"></div>
-    <div class="score"></div>
+    <div class="logo">
+
+    </div>
+    <div class="score">
+      <span class="score-text">SCORE</span> <br>
+      <span class="score-number" id="score-number">--</span>
+    </div>
   </div>
 
   <div class="game-option"></div>
@@ -37,6 +32,7 @@
   </div>
   <button class="rules"></button>
 
+  <script src="js/index.js"></script>
 </body>
 
 </html>
