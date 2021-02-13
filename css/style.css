@@ -1,6 +1,8 @@
-@font-face {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Barlow Semi Condensed";
-  src: url(https://fonts.google.com/specimen/Barlow+Semi+Condensed);
 }
 
 .attribution {
@@ -12,10 +14,14 @@
   color: hsl(228, 45%, 44%);
 }
 
-body {
+.main {
   background-image: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   background-repeat: no-repeat;
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
@@ -25,24 +31,82 @@ body {
   margin-top: 3%;
   border: 2px solid hsl(217, 16%, 45%);
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 2rem;
 }
 
 .score {
   background-color: white;
-  width: 90px;
-  height: 70px;
+  width: 130px;
+  height: 110px;
   float: right;
-  margin-right: 15px;
-  margin-top: 10px;
+  margin-right: 2rem;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .score-text {
-  font-family: "Barlow Semi Condensed";
+  font-size: 1em;
+  letter-spacing: 4px;
   color: hsl(229, 64%, 46%);
 }
 
+.score-number {
+  font-size: 3.5em;
+  margin-top: 1px;
+  font-weight: 700;
+  color: rgb(80, 80, 80);
+}
 
-/* .logo {
-  padding: 10px
-} */
+.game-body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.game-option {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%
+}
+
+.game-option:nth-child(1) {
+  top: 11%;
+  left: 34%;
+  background-image: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+}
+
+.game-option:nth-child(2) {
+  top: 11%;
+  left: 52%;
+  background-image: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.game-option:nth-child(3) {
+  top: 51%;
+  left: 43.5%;
+  background-image: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.game-option::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 12%;
+  top: 11%;
+}
