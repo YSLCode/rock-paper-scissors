@@ -75,38 +75,126 @@
   position: relative;
 }
 
+.result-body {
+  display: flex;
+  margin-top: 100px;
+  justify-items: center;
+  align-items: center;
+  padding-right: 50px;
+}
+
 .game-option {
   position: absolute;
   width: 200px;
   height: 200px;
-  border-radius: 50%
+  border-radius: 50%;
 }
 
-.game-option:nth-child(1) {
-  top: 11%;
-  left: 34%;
-  background-image: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+.game-option-result {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
-.game-option:nth-child(2) {
-  top: 11%;
-  left: 52%;
-  background-image: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-}
-
-.game-option:nth-child(3) {
-  top: 51%;
-  left: 43.5%;
-  background-image: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-}
-
-.game-option::after {
-  content: "";
+.mask {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
   left: 12%;
+  top: 12%;
+  box-shadow: inset 0 8px rgba(0, 0, 0, 0.205);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#paper {
   top: 11%;
+  left: 34%;
+  background-image: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+  box-shadow: 0 8px rgb(26, 56, 204);
+}
+
+#paper>.mask {
+  background-image: url("../images/icon-paper.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 80px;
+}
+
+#scissors {
+  top: 11%;
+  left: 52%;
+  background-image: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 8px rgb(150, 101, 5);
+}
+
+#scissors>.mask {
+  background-image: url("../images/icon-scissors.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 80px;
+}
+
+#rock {
+  top: 51%;
+  left: 43.5%;
+  background-image: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 8px rgb(122, 16, 36);
+}
+
+#rock>.mask {
+  background-image: url("../images/icon-rock.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px 80px;
+}
+
+.rules {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid hsl(218, 19%, 61%);
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  color: hsl(217, 17%, 64%);
+  font-size: 1em;
+  align-self: flex-end;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.rules-container {
+  display: none;
+  position: absolute;
+  width: 25em;
+  height: 25em;
+  background-color: white;
+  top: 10em;
+  border-radius: 0.5em;
+}
+
+.rules-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 30px 40px 30px;
+}
+
+.rules-text {
+  font-size: 22px;
+}
+
+.rules-instruction {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-result {
+  font-size: 20px;
+  color: red;
 }
