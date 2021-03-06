@@ -1,31 +1,41 @@
-function uiUpdater(userSelected, systemSelected, gameResult) {
-    let template =
-        `
-        <div id='result-body' class='result-body'>
-            <div class="game-option-result" id="` +
-        userSelected +
-        `">
-            <div class="mask">
+import {
+    setCookie,
+    getCookie
+} from "./cookies.js";
 
-            </div>
-            </div>
-    
+function uiUpdater(userSelected, systemSelected, gameResult, userScore) {
+    let template = `
 
-            <div class="game-option-result" id="${systemSelected}">
+            <div class="game-option-result" id="${userSelected}-result">
             <div class="mask">
 
             </div>
             </div>
 
-            <div class="game-result">
-            ${gameResult}
+            <div class="game-result"> 
+                <div class="game-result-text">
+                   YOU ${gameResult.toUpperCase()} 
+                </div>
+                <button id="play-again">PLAY AGAIN</button>
             </div>
 
-        </div>
-    `;
+            <div class="game-option-result" id="${systemSelected}-result">
+            <div class="mask">
+
+            </div>
+            </div>`;
+
+
+    if (getCookie("userScore")) {
+        setCookie("userScore", getCookie("userScore") * 1 + userScore);
+    } else {
+        setCookie("userScore", userScore);
+    }
+
 
     document.getElementById("game-body").innerHTML = template;
-    document.getElementById("game-body").style.background = "rgba(0,0,0,0)";
+
+    document.getElementById("score-number").innerHTML = getCookie("userScore");
 }
 
 export default uiUpdater;
