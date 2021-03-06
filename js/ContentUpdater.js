@@ -36,6 +36,10 @@ function uiUpdater(userSelected, systemSelected, gameResult, userScore) {
     document.getElementById("game-body").innerHTML = template;
 
     document.getElementById("score-number").innerHTML = getCookie("userScore");
+
+    document
+        .getElementById("play-again")
+        .addEventListener("click", () => location.reload());
 }
 
 export default uiUpdater;
