@@ -15,11 +15,11 @@ function logic(userSelected) {
     let systemSelected = systemSelection();
 
     if ((userSelected + 1) % 3 == systemSelected) {
-        return ["lost", option_names[systemSelected]];
+        return ["lost", option_names[systemSelected], -1];
     } else if (userSelected == systemSelected) {
-        return ["tie", option_names[systemSelected]];
+        return ["tie", option_names[systemSelected], 0];
     } else {
-        return ["win", option_names[systemSelected]];
+        return ["win", option_names[systemSelected], 1];
     }
 }
 
