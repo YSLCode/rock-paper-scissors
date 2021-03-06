@@ -10,7 +10,7 @@ function getEvents() {
         elements[i] = getElement(elements[i]);
         elements[i] = elements[i].addEventListener("click", () => {
             let result = gameLogic(elementNames[i]);
-            uiUpdater(elementNames[i], result[1], result[0]);
+            uiUpdater(elementNames[i], result[1], result[0], result[2]);
         });
     }
 }
