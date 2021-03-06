@@ -67,20 +67,22 @@
 }
 
 .game-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 400px;
+  margin-left: 400px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.game-body-primary {
   width: 100%;
   height: 100%;
   background-image: url(../images/bg-triangle.svg);
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
-}
-
-.result-body {
-  display: flex;
-  margin-top: 100px;
-  justify-items: center;
-  align-items: center;
-  padding-right: 50px;
 }
 
 .game-option {
@@ -95,6 +97,17 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin: 100px;
+}
+
+.game-option-result:nth-child(1) {
+  margin-left: 300px;
+  margin-right: 0;
+}
+
+.game-option-result:nth-child(3) {
+  margin-right: 300px;
+  margin-left: 0;
 }
 
 .mask {
@@ -118,11 +131,17 @@
   box-shadow: 0 8px rgb(26, 56, 204);
 }
 
-#paper>.mask {
+#paper>.mask,
+#paper-result>.mask {
   background-image: url("../images/icon-paper.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80px 80px;
+}
+
+#paper-result {
+  background-image: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+  box-shadow: 0 8px rgb(26, 56, 204);
 }
 
 #scissors {
@@ -132,11 +151,17 @@
   box-shadow: 0 8px rgb(150, 101, 5);
 }
 
-#scissors>.mask {
+#scissors>.mask,
+#scissors-result>.mask {
   background-image: url("../images/icon-scissors.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80px 80px;
+}
+
+#scissors-result {
+  background-image: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  box-shadow: 0 8px rgb(150, 101, 5);
 }
 
 #rock {
@@ -146,11 +171,46 @@
   box-shadow: 0 8px rgb(122, 16, 36);
 }
 
-#rock>.mask {
+#rock>.mask,
+#rock-result>.mask {
   background-image: url("../images/icon-rock.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80px 80px;
+}
+
+#rock-result {
+  background-image: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  box-shadow: 0 8px rgb(122, 16, 36);
+}
+
+.game-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-result-text {
+  width: 300px;
+  font-size: 60px;
+  text-align: center;
+  color: whitesmoke;
+  letter-spacing: 4px;
+}
+
+#play-again {
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  color: red;
+  font-size: 22px;
+  letter-spacing: 3px;
+  width: 240px;
+  height: 55px;
 }
 
 .rules {
@@ -192,9 +252,4 @@
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.game-result {
-  font-size: 20px;
-  color: red;
 }
