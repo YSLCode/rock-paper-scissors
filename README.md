@@ -1,2 +1,2 @@
 # rock-paper-scissors
-A rock paper scissors game written with JavaScript based on a challenge from https://www.frontendmentor.io/
+A rock paper scissors game written with HTML5/CSS3 and pure JavaScript based on a challenge from frontendmentor
